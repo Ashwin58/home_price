@@ -1,0 +1,674 @@
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: white; /* White text for better readability */
+    font-weight: bold;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black for better visibility */
+    color: white; /* White text */
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header:hover {
+    background-color: rgba(128, 128, 128, 0.6); /* Slightly darker on hover */
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px; /* Adjust as needed */
+}
+
+/* Horizontal Form Layout */
+.horizontal-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between form groups */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Group Styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5px;
+    min-width: 150px; /* Adjust as needed */
+}
+
+/* Input and Select Styling */
+.horizontal-form input,
+.horizontal-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent input background */
+    backdrop-filter: blur(5px);
+    color: #333; /* Dark text for better readability */
+}
+
+/* Glassy Button Styling */
+.glass-button {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.4); /* Hover effect */
+}
+
+/* Prediction Text */
+.prediction {
+    font-size: 24px;
+    color: #FFD700; /* Gold color for emphasis */
+    font-weight: bold;
+}
+
+/* Graph Container */
+.graph-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between graphs */
+    margin-top: 20px;
+}
+
+/* Individual Graph Styling */
+.graph {
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    width: 48%; /* Adjust width to fit side by side */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure images inside graphs are responsive */
+.graph img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Plotly graph adjustments */
+.graph .plotly-graph-div {
+    width: 100%;
+    height: 100%;
+}
+
+/* Login and Signup Container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+}
+
+/* Login and Signup Form Styling */
+.auth-form {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px; /* Adjust width as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Input and Button Styling */
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent input background */
+    color: white;
+    font-size: 16px;
+}
+
+.auth-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder text color */
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent button background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.auth-form button:hover {
+    background: rgba(255, 255, 255, 0.4); /* Hover effect */
+}
+
+/* Link Styling */
+.auth-form a {
+    color: #FFD700; /* Gold color for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black for better visibility */
+    color: white; /* White text */
+    font-weight: bold;
+    padding: 10px 20px; /* Add padding for spacing */
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Align items vertically */
+}
+
+/* Logo Styling */
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #FFD700; /* Gold color for the logo */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+
+
+.hero-section {
+    background: url('/static/images/hero-bg.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #FFD700; /* Gold color */
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e6b800; /* Darker gold on hover */
+}
+
+
+.features-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.features-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.testimonials-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.testimonial-card h4 {
+    font-size: 18px;
+    color: #FFD700;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #FFD700;
+}
+
+/* About Page Styling */
+.about-content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #FFD700; /* Gold color for the heading */
+}
+
+.about-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #FFD700; /* Gold color for the heading */
+}
+
+/* App Info Section */
+.app-info {
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    text-align: left;
+    background: transparent; /* Remove dark background */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+}
+
+.app-info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: white; /* White text for better readability */
+}
+
+.app-info ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.app-info li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: white; /* White text for better readability */
+}
+
+/* Contributors Section */
+.contributors {
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contributors-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contributor-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contributor-card:hover {
+    transform: translateY(-10px);
+}
+
+.contributor-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.contributor-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FFD700; /* Gold color for the name */
+}
+
+.contributor-card p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8); /* Light text for better readability */
+}
+
+/* Contributors Section */
+.contributors {
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.contributors h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #FFD700; /* Gold color for the heading */
+    text-align: center;
+}
+
+.contributors-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between cards */
+    align-items: center; /* Center-align cards */
+}
+
+.contributor-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Full width for the grid */
+    max-width: 600px; /* Maximum width for larger screens */
+}
+
+.contributor-card:hover {
+    transform: translateY(-10px);
+}
+
+.contributor-card img {
+    width: 150px; /* Medium rectangular size */
+    height: 150px;
+    border-radius: 15px; /* Rounded corners */
+    object-fit: cover; /* Ensure the image fits well */
+    margin-bottom: 15px;
+}
+
+.contributor-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FFD700; /* Gold color for the name */
+}
+
+.contributor-card p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8); /* Light text for better readability */
+    margin-bottom: 10px;
+    text-align: center; /* Center-align text */
+}
+
+/* App Info Section */
+.app-info {
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.9); /* Light text for better readability */
+}
+
+.app-info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #FFD700; /* Gold color for the heading */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.app-info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6; /* Improve readability */
+}
+
+.app-info ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.app-info ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.app-info ul li::before {
+    content: "•"; /* Custom bullet */
+    color: #FFD700; /* Gold color for bullets */
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.app-info strong {
+    color: #FFD700; /* Gold color for emphasis */
+    font-weight: bold;
+}
+
+/* Add a subtle animation for hover effect */
+.app-info:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Glassy Button Styling */
+.predict-button {
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+.predict-button:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly brighter background on hover */
+    border-color: #FFD700; /* Gold border on hover */
+    color: #FFD700; /* Gold text on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.predict-button:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow on click */
+}

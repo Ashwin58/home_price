@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="about-content">
+    
+    <section class="app-info">
+        <h2>About the App</h2>
+        <p>This application leverages the Boston Housing dataset sourced from Kaggle, where extensive exploratory data analysis (EDA) and preprocessing have been conducted to prepare the data for modeling.</p>
+        <p>To predict house prices, three regression algorithms were applied: Random Forest, Linear Regression, and Decision Tree Regression. The models were evaluated using Mean Squared Error (MSE) and R-squared (R²) metrics to assess their performance.</p>
+        <p>The evaluation results are as follows:</p>
+        <ul>
+            <li><strong>Linear Regression</strong>: MSE: 26.27, R²: 0.64</li>
+            <li><strong>Random Forest</strong>: MSE: 10.24, R²: 0.86</li>
+            <li><strong>Decision Tree Regression</strong>: MSE: 13.00, R²: 0.82</li>
+        </ul>
+        <p>Based on these results, the <strong>Random Forest</strong> model was selected for deployment due to its superior performance in both MSE and R² metrics. This application provides an intuitive interface for users to input housing features and receive accurate predictions for house prices.</p>
+    </section>
+
+    <section class="contributors">
+        <h2>Contributors</h2>
+        <div class="contributors-grid">
+            <!-- Top Contributors -->
+            <div class="contributor-card">
+                <img src="{{ url_for('static', filename='images/c1.jpg') }}" alt="Contributor 1">
+                <h3>Matrika Dhamala</h3>
+                <p>Lead Developer</p>
+                <p>Matrika is responsible for the development and deployment of the machine learning models and the web application.</p>
+            </div>
+            <div class="contributor-card">
+                <img src="{{ url_for('static', filename='images/c2.jpg') }}" alt="Contributor 2">
+                <h3>Ashwin Dhungana</h3>
+                <p>Data Engineer</p>
+                <p>Ashwin Dhungana performed the exploratory data analysis and preprocessing of the Boston Housing dataset.</p>
+            </div>
+            <!-- Bottom Contributors -->
+            <div class="contributor-card">
+                <img src="{{ url_for('static', filename='images/c3.jpg') }}" alt="Contributor 3">
+                <h3>Farhan Atif Khan</h3>
+                <p>UI/UX Designer</p>
+                <p>Farhan Atif Khan designed the user interface and ensured a seamless user experience.</p>
+            </div>
+            <div class="contributor-card">
+                <img src="{{ url_for('static', filename='images/c4.jpg') }}" alt="Contributor 4">
+                <h3>Aditya Singh</h3>
+                <p>Backend Developer</p>
+                <p>Aditya Singh handled the backend development and integration of the machine learning models.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+</main>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

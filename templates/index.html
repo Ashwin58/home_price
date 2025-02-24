@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1>Welcome to House Price Prediction</h1>
+</header>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<main class="home-content animated">
+    <div class="hero-section">
+        <h1>Find Your Dream Home</h1>
+        <p>Our advanced machine learning model helps you predict house prices with high accuracy. Whether you're buying or selling, we've got you covered.</p>
+        <a href="{{ url_for('predict') }}" class="cta-button">Get Started</a>
+    </div>
+
+    <section class="features-section">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Accurate Predictions</h3>
+                <p>Our model uses advanced algorithms to provide highly accurate house price predictions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-user-friends"></i>
+                <h3>User-Friendly</h3>
+                <p>Easy-to-use interface designed for both buyers and sellers.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Advanced Features</h3>
+                <p>Explore detailed insights and visualizations to make informed decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <h2>What Our Users Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"This tool helped me find the perfect home at the right price. Highly recommended!"</p>
+                <h4>- John Doe</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"The predictions were spot on. I sold my house for a great price thanks to this platform."</p>
+                <h4>- Jane Smith</h4>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>Developed by Matrika Dhamala. &copy; 2024. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+{% endblock %}

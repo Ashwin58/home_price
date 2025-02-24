@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>House Price Prediction</h1>
+<div class="form-container">
+    <form method="POST" class="horizontal-form">
+        <div class="form-group">
+            <label for="CRIM">CRIM:</label>
+            <input type="number" step="0.001" id="CRIM" name="CRIM" required>
+        </div>
+        <div class="form-group">
+            <label for="ZN">ZN:</label>
+            <input type="number" step="0.1" id="ZN" name="ZN" required>
+        </div>
+        <div class="form-group">
+            <label for="INDUS">INDUS:</label>
+            <input type="number" step="0.1" id="INDUS" name="INDUS" required>
+        </div>
+        <div class="form-group">
+            <label for="CHAS">CHAS:</label>
+            <select id="CHAS" name="CHAS" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="NOX">NOX:</label>
+            <input type="number" step="0.001" id="NOX" name="NOX" required>
+        </div>
+        <div class="form-group">
+            <label for="RM">RM:</label>
+            <input type="number" step="0.1" id="RM" name="RM" required>
+        </div>
+        <div class="form-group">
+            <label for="AGE">AGE:</label>
+            <input type="number" step="0.1" id="AGE" name="AGE" required>
+        </div>
+        <div class="form-group">
+            <label for="DIS">DIS:</label>
+            <input type="number" step="0.1" id="DIS" name="DIS" required>
+        </div>
+        <div class="form-group">
+            <label for="RAD">RAD:</label>
+            <input type="number" id="RAD" name="RAD" required>
+        </div>
+        <div class="form-group">
+            <label for="TAX">TAX:</label>
+            <input type="number" id="TAX" name="TAX" required>
+        </div>
+        <div class="form-group">
+            <label for="PTRATIO">PTRATIO:</label>
+            <input type="number" step="0.1" id="PTRATIO" name="PTRATIO" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="predict-button">Predict House Price</button>
+        </div>
+    </form>
+</div>
+{% if predicted_price %}
+    <h2>Predicted House Price: ${{ predicted_price }}</h2>
+    <div class="graph-container">
+        <div class="graph">
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Feature Importance">
+        </div>
+        <div class="graph">
+            {{ scatter_plot|safe }}
+        </div>
+    </div>
+{% endif %}
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
